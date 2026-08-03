@@ -1,0 +1,25 @@
+node_modules/
+.pnpm-store/
+dist/
+.venv/
+__pycache__/
+.env
+.source-libras-recognition/
+.validation-dataset-page/
+.training/
+.mplcache/
+*.pyc
+*-server.log
+*-server-error.log
+
+# Modelos antigos/experimentais; o modelo do MVP permanece versionado.
+api/models/*
+!api/models/libras_21_model.joblib
+
+# Assets de experimentação que não são usados pela interface atual.
+public/landmark.gif
+public/screen01.png
+public/brand/interlibras-logo-source.png
+
+# Lockfile antigo; este projeto utiliza pnpm-lock.yaml.
+yarn.lock
