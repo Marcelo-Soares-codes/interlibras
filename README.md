@@ -34,7 +34,7 @@ Não há função serverless, API ou banco de dados no funcionamento da aplicaç
 
 ## Instalação e uso offline
 
-No Android ou no computador, abra o menu do navegador e escolha **Instalar InterLibras**. Quando o navegador disponibilizar o atalho, o botão **Instalar** também aparecerá no topo da página. No iPhone ou iPad, use **Compartilhar → Adicionar à Tela de Início**.
+No Android ou no computador, use o convite nativo ou abra o menu do navegador e escolha **Instalar InterLibras**. No iPhone ou iPad, use **Compartilhar → Adicionar à Tela de Início**. A aplicação não intercepta o convite de instalação do navegador.
 
 A interface fica disponível offline depois da primeira visita. Os arquivos do reconhecimento são armazenados no dispositivo quando a câmera ou uma foto é usada pela primeira vez; a partir daí, o reconhecimento também funciona sem internet.
 

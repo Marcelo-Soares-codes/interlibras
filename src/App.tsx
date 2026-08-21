@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { ArrowRight, BrainCircuit, Camera, Check, Cpu, Download, Hand, ImagePlus, LoaderCircle, LockKeyhole, RefreshCw, ScanLine, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
-import { useInstallPrompt } from "./pwa/useInstallPrompt";
+import { ArrowRight, BrainCircuit, Camera, Check, Cpu, Hand, ImagePlus, LoaderCircle, LockKeyhole, RefreshCw, ScanLine, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
 import { localRecognizer } from "./recognition/localRecognizer";
 
 const LIVE_INTERVAL_MS = 420;
@@ -9,7 +8,6 @@ const MIN_CONFIDENCE = 0.55;
 type Prediction = { letter: string; confidence: number | null };
 
 export function App() {
-  const { canInstall, install } = useInstallPrompt();
   const inputRef = useRef<HTMLInputElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -126,7 +124,7 @@ export function App() {
     <main className="landing-page">
       <section className="hero-shell" id="inicio">
         <div className="landing-bg" />
-        <nav className="landing-nav"><a className="landing-brand" href="#inicio"><img src="/brand/interlibras-mark.png" alt="" /><span>InterLibras</span></a><div className="nav-links"><a href="#como-funciona">Como funciona</a><a href="#cobertura">Letras</a></div><div className="nav-actions">{canInstall && <button className="nav-install" onClick={() => void install()}><Download size={15} /> Instalar</button>}<button className="nav-cta" onClick={() => void startCamera()}>Experimentar</button></div></nav>
+        <nav className="landing-nav"><a className="landing-brand" href="#inicio"><img src="/brand/interlibras-mark.png" alt="" /><span>InterLibras</span></a><div className="nav-links"><a href="#como-funciona">Como funciona</a><a href="#cobertura">Letras</a></div><div className="nav-actions"><button className="nav-cta" onClick={() => void startCamera()}>Experimentar</button></div></nav>
         <div className="landing-hero">
           <div className="hero-copy"><span className="hero-kicker"><Sparkles size={14} /> Reconhecimento visual de Libras</span><h1>Gestos que viram<br /><em>entendimento.</em></h1><p>Mostre uma letra em Libras para a câmera. O InterLibras identifica o sinal em tempo real, direto no navegador.</p><div className="hero-actions"><button className="hero-cta" onClick={() => void startCamera()}>Iniciar reconhecimento <ArrowRight size={20} /></button><a href="#como-funciona">Entender a tecnologia</a></div><div className="hero-proof"><span><Check size={15} /> 21 letras estáticas</span><span><ShieldCheck size={15} /> Imagens não armazenadas</span><span><Zap size={15} /> Resultado ao vivo</span></div></div>
           <div className="product-preview" aria-label="Prévia da tela de reconhecimento do InterLibras"><div className="preview-top"><span><img src="/brand/interlibras-mark.png" alt="" /> InterLibras</span><i>AO VIVO</i></div><div className="preview-camera"><Hand size={122} strokeWidth={1.15} /><div className="preview-frame" /><span>Mantenha a mão na área</span></div><div className="preview-result"><small>LETRA RECONHECIDA</small><strong>A</strong><span>98% de confiança</span></div></div>
