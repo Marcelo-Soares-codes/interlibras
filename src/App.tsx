@@ -37,6 +37,27 @@ export function App() {
 
   useEffect(() => {
     if (!cameraOpen) return;
+    const video = videoRef.current;
+    const stream = streamRef.current;
+    if (!video || !stream) return;
+
+    video.srcObject = stream;
+    video.muted = true;
+    video.playsInline = true;
+    const startPlayback = () => {
+      void video.play().catch(() => setLiveHint("Toque na tela para iniciar a câmera"));
+    };
+    video.addEventListener("loadedmetadata", startPlayback, { once: true });
+    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) startPlayback();
+
+    return () => {
+      video.removeEventListener("loadedmetadata", startPlayback);
+      video.srcObject = null;
+    };
+  }, [cameraOpen]);
+
+  useEffect(() => {
+    if (!cameraOpen) return;
     let stopped = false;
     let timer: number | undefined;
     const schedule = (delay = LIVE_INTERVAL_MS) => { if (!stopped) timer = window.setTimeout(scan, delay); };
@@ -87,7 +108,6 @@ export function App() {
       setCameraOpen(true);
       setCameraStarting(false);
       setLiveHint("Enquadre sua mão");
-      requestAnimationFrame(() => { if (videoRef.current) { videoRef.current.srcObject = stream; void videoRef.current.play(); } });
     } catch (reason) {
       if (requestId !== startRequestRef.current) return;
       setCameraStarting(false);
@@ -142,7 +162,7 @@ export function App() {
   return (
     <main className="camera-screen">
       <div className="camera-viewport">
-      {cameraOpen && <video ref={videoRef} className="fullscreen-video" autoPlay muted playsInline aria-label="Imagem ao vivo da câmera" />}
+      {cameraOpen && <video ref={videoRef} className="fullscreen-video" autoPlay muted playsInline onClick={() => void videoRef.current?.play()} aria-label="Imagem ao vivo da câmera" />}
       {preview && !cameraOpen && <img className="fullscreen-photo" src={preview} alt="Foto enviada para reconhecimento" />}
       <div className="camera-shade" />
       <header className="camera-header"><button onClick={closeCamera} aria-label="Voltar"><X size={22} /></button><div><img src="/brand/interlibras-mark.png" alt="" /><span>InterLibras</span></div><span className={`camera-status ${cameraOpen ? "active" : ""}`}><i /> {cameraOpen ? "Ao vivo" : "Câmera"}</span></header>
