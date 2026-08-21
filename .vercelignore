@@ -1,5 +1,6 @@
 api/
 scripts/
+tools/
 .venv/
 .training/
 .validation-dataset-page/

@@ -14,11 +14,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 ORIGINAL_CSV = ROOT / ".training" / "original-dataset.bin"
 EXTERNAL_ROOT = ROOT / ".validation-dataset-page" / "dataset"
 EXTERNAL_CSV = ROOT / ".training" / "external-landmarks.csv"
-MODEL_OUTPUT = ROOT / "api" / "models" / "libras_21_model.joblib"
+MODEL_OUTPUT = Path(__file__).resolve().with_name("libras_21_model.joblib")
 METRICS_OUTPUT = ROOT / ".training" / "metrics.json"
 LABELS = ["A", "B", "C", "D", "E", "F", "G", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "Y"]
 

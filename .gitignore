@@ -12,14 +12,9 @@ __pycache__/
 *-server.log
 *-server-error.log
 
-# Modelos antigos/experimentais; o modelo do MVP permanece versionado.
-api/models/*
-!api/models/libras_21_model.joblib
-
-# Assets de experimentação que não são usados pela interface atual.
-public/landmark.gif
-public/screen01.png
-public/brand/interlibras-logo-source.png
+# Modelos antigos/experimentais; o modelo-fonte do MVP permanece versionado.
+tools/model/*.joblib
+!tools/model/libras_21_model.joblib
 
 # Lockfile antigo; este projeto utiliza pnpm-lock.yaml.
 yarn.lock

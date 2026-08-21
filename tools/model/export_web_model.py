@@ -7,8 +7,8 @@ import joblib
 import numpy as np
 
 
-ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "api" / "models" / "libras_21_model.joblib"
+ROOT = Path(__file__).resolve().parents[2]
+SOURCE = Path(__file__).resolve().with_name("libras_21_model.joblib")
 OUTPUT = ROOT / "public" / "models" / "libras_21_forest.bin"
 MAGIC = 0x46524C49  # ILRF in little-endian byte order.
 VERSION = 1

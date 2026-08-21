@@ -8,8 +8,8 @@ import joblib
 import numpy as np
 
 
-ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = ROOT / "api" / "models" / "libras_21_model.joblib"
+ROOT = Path(__file__).resolve().parents[2]
+MODEL_PATH = Path(__file__).resolve().with_name("libras_21_model.joblib")
 BINARY_PATH = ROOT / "public" / "models" / "libras_21_forest.bin"
 DATASETS = [
     ROOT / ".training" / "original-dataset.bin",
