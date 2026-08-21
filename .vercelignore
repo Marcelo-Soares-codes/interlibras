@@ -1,0 +1,11 @@
+api/
+scripts/
+.venv/
+.training/
+.validation-dataset-page/
+.source-libras-recognition/
+.mplcache/
+node_modules/
+dist/
+yarn.lock
+*.log

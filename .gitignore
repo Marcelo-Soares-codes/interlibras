@@ -23,3 +23,6 @@ public/brand/interlibras-logo-source.png
 
 # Lockfile antigo; este projeto utiliza pnpm-lock.yaml.
 yarn.lock
+
+.vercel
+.env*
