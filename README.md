@@ -2,6 +2,12 @@
 
 PWA instalável para reconhecimento de 21 letras estáticas do alfabeto de Libras. A câmera, a detecção da mão e a classificação são executadas diretamente no dispositivo: nenhuma imagem é enviada para um backend.
 
+Aplicação publicada: [interlibras.vercel.app](https://interlibras.vercel.app)
+
+## Escopo da versão estável
+
+Esta branch mantém a mesma versão estável publicada na Vercel: frontend estático, PWA instalável e reconhecimento inteiramente local. O experimento com sequências de movimento foi interrompido e não faz parte desta versão; nenhum modelo temporal ou código experimental é necessário para executar o projeto.
+
 ## Como funciona
 
 1. O MediaPipe Hand Landmarker localiza 21 pontos da mão.
