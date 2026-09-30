@@ -1,30 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@1,600&display=swap');
 
-:root { font-family: "DM Sans", sans-serif; color: #fff; background: #18002f; font-synthesis: none; }
+:root { font-family: "DM Sans", sans-serif; color: #fff; background: #31005d; font-synthesis: none; }
 * { box-sizing: border-box; }
 html, body, #root { margin: 0; min-width: 320px; min-height: 100%; }
 button { font: inherit; }
-.landing-page { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; background: #31005d; }
-.landing-bg { position: absolute; inset: 0; z-index: -2; background: url('/brand/interlibras-hero-bg.png') center / cover no-repeat; }
-.landing-bg::after { content: ""; position: absolute; inset: 0; background: rgba(25,0,49,.22); }
-.landing-nav { width: min(100% - 36px, 1100px); height: 76px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-.landing-brand { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; }
-.landing-brand img { width: 38px; height: 38px; object-fit: contain; }
-.beta-pill { padding: 7px 11px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: rgba(255,255,255,.78); background: rgba(255,255,255,.08); backdrop-filter: blur(10px); font-size: 11px; font-weight: 600; }
-.landing-hero { width: min(100% - 40px, 720px); min-height: calc(100svh - 146px); margin: 0 auto; padding: 7vh 0 46px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.hero-mark { width: clamp(116px, 29vw, 156px); aspect-ratio: 1; display: grid; place-items: center; margin-bottom: 24px; border-radius: 50%; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.16); box-shadow: 0 24px 70px rgba(10,0,25,.35); backdrop-filter: blur(12px); }
-.hero-mark img { width: 92%; height: 92%; object-fit: contain; }
-.hero-kicker { display: flex; align-items: center; gap: 7px; color: #dfc6ff; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.landing-hero h1 { margin: 16px 0 18px; font-size: clamp(44px, 12vw, 76px); line-height: .92; letter-spacing: -.055em; }
-.landing-hero h1 em { color: #d5a4ff; font-family: "Newsreader", serif; font-weight: 600; }
-.landing-hero > p { max-width: 540px; margin: 0 0 28px; color: rgba(255,255,255,.73); font-size: clamp(15px, 3.8vw, 18px); line-height: 1.58; }
-.hero-cta { min-width: min(100%, 320px); min-height: 60px; padding: 0 26px; border: 0; border-radius: 18px; display: flex; align-items: center; justify-content: center; gap: 12px; color: #4a0877; background: #fff; box-shadow: 0 16px 40px rgba(15,0,30,.28); font-weight: 800; font-size: 16px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+.landing-page { min-height: 100svh; }
+.final-cta { min-height: 100svh; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; background: #530789 url('/brand/interlibras-hero-bg.png') center / cover; }
+.final-cta > img { width: 86px; height: 86px; margin-bottom: 22px; }
+.final-cta > span { color: #e1c1ef; font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.final-cta h1 { margin: 12px 0 16px; color: #fff; font-size: clamp(36px, 5vw, 58px); line-height: 1.04; letter-spacing: -.045em; }
+.final-cta h1 em { color: #d9aeeb; font-family: "Newsreader", serif; }
+.final-cta p { margin: 0 0 26px; color: rgba(255,255,255,.66); line-height: 1.5; }
+.hero-cta { min-width: 260px; min-height: 60px; padding: 0 26px; border: 0; border-radius: 18px; display: flex; align-items: center; justify-content: center; gap: 12px; color: #4a0877; background: #fff; box-shadow: 0 16px 40px rgba(15,0,30,.28); font-weight: 800; font-size: 16px; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
 .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 20px 48px rgba(15,0,30,.38); }
 .hero-cta:focus-visible { outline: 3px solid #d6a7ff; outline-offset: 4px; }
-.hero-proof { margin-top: 22px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px; color: rgba(255,255,255,.68); font-size: 11px; }
-.hero-proof span { display: flex; align-items: center; gap: 6px; }
-.landing-footer { height: 70px; display: grid; place-items: center; color: rgba(255,255,255,.45); font-family: "Newsreader", serif; font-size: 15px; font-style: italic; }
-
 .camera-screen { position: fixed; inset: 0; overflow: hidden; display: grid; place-items: center; color: #fff; background: #20003c url('/brand/interlibras-hero-bg.png') center / cover no-repeat; }
 .camera-screen::before { content: ""; position: absolute; inset: 0; background: rgba(18,0,31,.42); backdrop-filter: blur(8px); }
 .camera-viewport { position: relative; width: min(100vw, 56.25svh); height: min(100svh, 177.777vw); aspect-ratio: 9 / 16; overflow: hidden; background: #12001f; box-shadow: 0 0 90px rgba(0,0,0,.55); }
@@ -43,6 +32,7 @@ button { font: inherit; }
 .camera-frame i { display: none; }
 .camera-hint { position: absolute; top: 112px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 40px); padding: 8px 12px; border-radius: 999px; color: #fff; background: rgba(39,0,72,.6); backdrop-filter: blur(10px); font-size: 11px; font-weight: 600; }
 .camera-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #240043; }
+.camera-loading button { min-height: 44px; margin-top: 8px; padding: 0 17px; border: 1px solid rgba(255,255,255,.18); border-radius: 13px; display: flex; align-items: center; gap: 8px; color: #fff; background: rgba(255,255,255,.1); font-weight: 700; cursor: pointer; }
 .spin { animation: spin .8s linear infinite; }
 .camera-fallback { position: absolute; inset: 0; width: min(100% - 40px, 420px); height: max-content; margin: auto; padding: 30px 24px; border: 1px solid rgba(255,255,255,.15); border-radius: 28px; background: rgba(55,0,94,.82); backdrop-filter: blur(18px); text-align: center; }
 .fallback-icon { width: 58px; height: 58px; margin: 0 auto 16px; display: grid; place-items: center; border-radius: 18px; background: rgba(255,255,255,.12); }
@@ -61,121 +51,13 @@ button { font: inherit; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
 @media (min-width: 760px) {
-  .landing-hero { padding-top: 5vh; }
   .camera-frame { inset: 19% 12% 27%; }
   .camera-header { padding-left: 28px; padding-right: 28px; }
   .camera-viewport { border-radius: 24px; }
 }
-@media (max-height: 700px) {
-  .landing-hero { padding-top: 2vh; }
-  .hero-mark { width: 100px; margin-bottom: 14px; }
-  .landing-hero h1 { font-size: 42px; margin: 10px 0 12px; }
-  .landing-hero > p { margin-bottom: 18px; }
-}
-
-/* Landing page */
-html { scroll-behavior: smooth; }
-.landing-page { overflow: visible; color: #24162d; background: #f8f6fa; }
-.hero-shell { position: relative; min-height: 100svh; overflow: hidden; isolation: isolate; color: #fff; background: #31005d; }
-.landing-bg { z-index: -2; }
-.landing-nav { position: relative; z-index: 5; height: 84px; }
-.landing-brand { color: inherit; text-decoration: none; }
-.nav-links { display: flex; gap: 28px; margin-left: auto; margin-right: 30px; }
-.nav-links a { color: rgba(255,255,255,.72); font-size: 13px; font-weight: 600; text-decoration: none; }
-.nav-links a:hover { color: #fff; }
-.nav-cta { min-height: 42px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 12px; color: #fff; background: rgba(255,255,255,.09); font-size: 13px; font-weight: 700; cursor: pointer; backdrop-filter: blur(10px); }
-.landing-hero { width: min(100% - 40px, 1100px); min-height: calc(100svh - 132px); padding: 5vh 0 70px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .75fr); gap: clamp(45px, 7vw, 100px); align-items: center; text-align: left; }
-.hero-copy { max-width: 650px; }
-.landing-hero h1 { margin: 18px 0 22px; font-size: clamp(52px, 7vw, 88px); }
-.landing-hero > p, .hero-copy > p { max-width: 590px; margin: 0 0 30px; color: rgba(255,255,255,.74); font-size: clamp(16px, 1.7vw, 19px); line-height: 1.6; }
-.hero-actions { display: flex; align-items: center; gap: 24px; }
-.hero-actions > a { color: rgba(255,255,255,.75); font-size: 13px; font-weight: 700; text-underline-offset: 5px; }
-.hero-cta { min-width: 260px; width: max-content; }
-.hero-proof { justify-content: flex-start; gap: 12px 20px; }
-.product-preview { position: relative; width: min(100%, 340px); aspect-ratio: 9/16; justify-self: end; overflow: hidden; border: 7px solid rgba(255,255,255,.86); border-radius: 38px; background: #180526; box-shadow: 0 40px 90px rgba(13,0,26,.55), 0 0 0 1px rgba(255,255,255,.24); transform: rotate(2deg); }
-.product-preview::before { content: ""; position: absolute; inset: 0; background: url('/brand/interlibras-hero-bg.png') center / cover; opacity: .55; }
-.preview-top { position: relative; z-index: 2; height: 70px; padding: 17px 18px; display: flex; align-items: center; justify-content: space-between; background: rgba(25,0,44,.52); backdrop-filter: blur(12px); font-size: 11px; font-weight: 700; }
-.preview-top span { display: flex; align-items: center; gap: 7px; }
-.preview-top img { width: 29px; height: 29px; }
-.preview-top i { padding: 6px 8px; border-radius: 999px; color: #ffd6ee; background: rgba(255,255,255,.1); font-size: 8px; font-style: normal; letter-spacing: .1em; }
-.preview-camera { position: relative; z-index: 1; height: 60%; display: grid; place-items: center; color: rgba(255,255,255,.86); }
-.preview-camera > span { position: absolute; top: 40px; padding: 7px 11px; border-radius: 999px; background: rgba(42,0,72,.6); font-size: 9px; }
-.preview-frame { position: absolute; inset: 18% 11% 3%; border: 1px solid rgba(255,255,255,.62); border-radius: 28px; }
-.preview-result { position: absolute; z-index: 3; left: 50%; bottom: 20px; width: 190px; padding: 13px 16px; border: 1px solid rgba(255,255,255,.16); border-radius: 22px; display: flex; flex-direction: column; align-items: center; background: rgba(29,0,51,.72); backdrop-filter: blur(15px); transform: translateX(-50%); }
-.preview-result small { color: #deb9ff; font-size: 8px; letter-spacing: .13em; }
-.preview-result strong { font-size: 62px; line-height: 1; }
-.preview-result span { color: rgba(255,255,255,.5); font-size: 8px; }
-.hero-scroll { position: absolute; left: 50%; bottom: 22px; display: flex; align-items: center; gap: 7px; color: rgba(255,255,255,.46); font-size: 10px; letter-spacing: .06em; transform: translateX(-50%); }
-.hero-scroll svg { transform: rotate(90deg); }
-.light-section, .tech-section { width: min(100% - 40px, 1100px); margin: 0 auto; padding: 110px 0; }
-.section-heading { max-width: 570px; }
-.section-heading > span, .section-label, .final-cta > span { color: #7a26aa; font-size: 11px; font-weight: 800; letter-spacing: .16em; }
-.section-heading h2, .coverage-copy h2, .final-cta h2 { margin: 12px 0 16px; color: #25142e; font-size: clamp(36px, 5vw, 58px); line-height: 1.04; letter-spacing: -.045em; }
-.section-heading p, .coverage-copy > p { color: #746a7a; line-height: 1.65; }
-.steps-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.steps-grid article { position: relative; min-height: 250px; padding: 30px; border: 1px solid #e9e2ed; border-radius: 24px; background: #fff; box-shadow: 0 18px 50px rgba(52,24,66,.055); }
-.steps-grid article > b { position: absolute; top: 25px; right: 26px; color: #d8cfdd; font-family: "Newsreader",serif; font-size: 25px; font-style: italic; }
-.step-icon { width: 50px; height: 50px; margin-bottom: 28px; display: grid; place-items: center; border-radius: 15px; color: #7a26aa; background: #f1e6f8; }
-.steps-grid h3 { margin: 0 0 10px; font-size: 20px; }
-.steps-grid p, .tech-grid p { margin: 0; color: #817687; font-size: 14px; line-height: 1.6; }
-.coverage-section { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(50px, 8vw, 110px); align-items: center; border-top: 1px solid #eae4ed; }
-.coverage-copy h2 { font-size: clamp(38px, 4.5vw, 56px); }
-.coverage-note { margin-top: 30px; padding: 18px; display: flex; gap: 13px; border-radius: 17px; color: #6c268e; background: #f0e6f5; }
-.coverage-note svg { flex: 0 0 auto; }
-.coverage-note strong, .coverage-note span { display: block; }
-.coverage-note span { margin-top: 5px; color: #786a7d; font-size: 12px; line-height: 1.5; }
-.alphabet-card { padding: 30px; border: 1px solid #e6dee9; border-radius: 28px; background: #fff; box-shadow: 0 24px 70px rgba(51,24,64,.08); }
-.alphabet-head, .alphabet-legend { display: flex; align-items: center; justify-content: space-between; }
-.alphabet-head span { font-size: 13px; font-weight: 700; }
-.alphabet-head strong { color: #7a26aa; font-size: 21px; }
-.alphabet-grid { margin: 24px 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
-.alphabet-grid > span { aspect-ratio: 1; display: grid; place-items: center; border-radius: 10px; font-size: 13px; font-weight: 800; }
-.alphabet-grid .supported { color: #671997; background: #f0e2f7; }
-.alphabet-grid .pending { color: #a49ba8; border: 1px dashed #d8d0dc; background: #faf9fa; }
-.alphabet-legend { justify-content: flex-start; gap: 18px; color: #8b818f; font-size: 10px; }
-.alphabet-legend span { display: flex; align-items: center; gap: 6px; }
-.alphabet-legend i { width: 8px; height: 8px; border-radius: 3px; border: 1px dashed #bbb1bf; }
-.alphabet-legend i.ok { border: 0; background: #bc7ada; }
-.tech-section { width: 100%; max-width: none; padding-left: max(20px, calc((100% - 1100px)/2)); padding-right: max(20px, calc((100% - 1100px)/2)); color: #fff; background: #24102f; }
-.tech-section .section-heading h2 { color: #fff; }
-.tech-section .section-heading > span { color: #d7a8ee; }
-.tech-grid { margin-top: 50px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.1); }
-.tech-grid article { padding: 30px 26px; background: #24102f; }
-.tech-grid svg { margin-bottom: 25px; color: #cf92e9; }
-.tech-grid strong { display: block; margin-bottom: 10px; font-size: 16px; }
-.tech-grid p { color: rgba(255,255,255,.54); font-size: 12px; }
-.final-cta { padding: 110px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; color: #fff; background: #530789 url('/brand/interlibras-hero-bg.png') center / cover; }
-.final-cta > img { width: 86px; height: 86px; margin-bottom: 22px; }
-.final-cta > span { color: #e1c1ef; }
-.final-cta h2 { color: #fff; }
-.final-cta h2 em { color: #d9aeeb; font-family: "Newsreader",serif; }
-.final-cta p { margin: 0 0 26px; color: rgba(255,255,255,.66); }
-.site-footer { min-height: 100px; padding: 25px max(20px, calc((100% - 1100px)/2)); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; color: #655a6b; background: #fff; font-size: 11px; }
-.site-footer .landing-brand { color: #24162d; }
-.site-footer p { text-align: center; }
-.site-footer > a { justify-self: end; color: #6d267f; font-weight: 700; text-decoration: none; }
-@media (max-width: 760px) {
-  .nav-links { display: none; }
-  .landing-hero { min-height: auto; padding: 7vh 0 90px; grid-template-columns: 1fr; text-align: center; }
-  .hero-copy { margin: auto; }
-  .hero-actions { flex-direction: column; gap: 18px; }
-  .hero-proof { justify-content: center; }
-  .product-preview { width: min(80vw, 310px); margin-top: 14px; justify-self: center; transform: rotate(0); }
-  .hero-scroll { display: none; }
-  .light-section, .tech-section { padding-top: 78px; padding-bottom: 78px; }
-  .steps-grid, .coverage-section, .tech-grid { grid-template-columns: 1fr; }
-  .coverage-section { gap: 38px; }
-  .tech-grid { gap: 0; }
-  .tech-grid article { border-bottom: 1px solid rgba(255,255,255,.1); }
-  .site-footer { padding-top: 35px; padding-bottom: 35px; grid-template-columns: 1fr; gap: 18px; text-align: center; }
-  .site-footer .landing-brand, .site-footer > a { justify-self: center; }
-  .site-footer p { margin: 0; }
-}
-@media (max-width: 430px) {
-  .landing-nav { width: min(100% - 28px, 1100px); }
-  .nav-cta { padding: 0 13px; }
-  .landing-hero h1 { font-size: 48px; }
-  .hero-actions .hero-cta { min-width: 100%; }
-  .alphabet-card { padding: 22px 18px; }
-  .alphabet-grid { grid-template-columns: repeat(6, 1fr); }
+@media (max-height: 560px) {
+  .final-cta { padding-top: 24px; padding-bottom: 24px; }
+  .final-cta > img { width: 64px; height: 64px; margin-bottom: 12px; }
+  .final-cta h1 { margin: 8px 0 10px; font-size: clamp(32px, 7vh, 48px); }
+  .final-cta p { margin-bottom: 16px; }
 }
