@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { ArrowRight, BrainCircuit, Camera, Check, Cpu, Hand, ImagePlus, LoaderCircle, LockKeyhole, RefreshCw, ScanLine, ShieldCheck, Sparkles, X, Zap } from "lucide-react";
+import { Camera, ImagePlus, LoaderCircle, RefreshCw, X } from "lucide-react";
 import { localRecognizer } from "./recognition/localRecognizer";
 
 const LIVE_INTERVAL_MS = 420;
@@ -142,20 +142,13 @@ export function App() {
 
   if (screen === "landing") return (
     <main className="landing-page">
-      <section className="hero-shell" id="inicio">
-        <div className="landing-bg" />
-        <nav className="landing-nav"><a className="landing-brand" href="#inicio"><img src="/brand/interlibras-mark.png" alt="" /><span>InterLibras</span></a><div className="nav-links"><a href="#como-funciona">Como funciona</a><a href="#cobertura">Letras</a></div><div className="nav-actions"><button className="nav-cta" onClick={() => void startCamera()}>Experimentar</button></div></nav>
-        <div className="landing-hero">
-          <div className="hero-copy"><span className="hero-kicker"><Sparkles size={14} /> Reconhecimento visual de Libras</span><h1>Gestos que viram<br /><em>entendimento.</em></h1><p>Mostre uma letra em Libras para a câmera. O InterLibras identifica o sinal em tempo real, direto no navegador.</p><div className="hero-actions"><button className="hero-cta" onClick={() => void startCamera()}>Iniciar reconhecimento <ArrowRight size={20} /></button><a href="#como-funciona">Entender a tecnologia</a></div><div className="hero-proof"><span><Check size={15} /> 21 letras estáticas</span><span><ShieldCheck size={15} /> Imagens não armazenadas</span><span><Zap size={15} /> Resultado ao vivo</span></div></div>
-          <div className="product-preview" aria-label="Prévia da tela de reconhecimento do InterLibras"><div className="preview-top"><span><img src="/brand/interlibras-mark.png" alt="" /> InterLibras</span><i>AO VIVO</i></div><div className="preview-camera"><Hand size={122} strokeWidth={1.15} /><div className="preview-frame" /><span>Mantenha a mão na área</span></div><div className="preview-result"><small>LETRA RECONHECIDA</small><strong>A</strong><span>98% de confiança</span></div></div>
-        </div>
-        <div className="hero-scroll">Explore como funciona <ArrowRight size={15} /></div>
+      <section className="final-cta">
+        <img src="/brand/interlibras-mark.png" alt="" />
+        <span>PRONTO PARA TESTAR?</span>
+        <h1>Faça um sinal.<br /><em>Descubra a letra.</em></h1>
+        <p>Funciona melhor com boa iluminação, uma mão por vez e fundo simples.</p>
+        <button className="hero-cta" onClick={() => void startCamera()}>Abrir reconhecimento <Camera size={19} /></button>
       </section>
-      <section className="light-section how-section" id="como-funciona"><div className="section-heading"><span>COMO FUNCIONA</span><h2>Da câmera à letra<br />em poucos instantes.</h2><p>Um fluxo simples, sem cadastro e sem configurações complicadas.</p></div><div className="steps-grid"><article><b>01</b><div className="step-icon"><Camera size={25} /></div><h3>Abra a câmera</h3><p>Permita o acesso e posicione sua mão dentro da área indicada.</p></article><article><b>02</b><div className="step-icon"><ScanLine size={25} /></div><h3>Faça o sinal</h3><p>O sistema analisa os pontos e o formato da mão sem salvar a imagem.</p></article><article><b>03</b><div className="step-icon"><BrainCircuit size={25} /></div><h3>Veja a letra</h3><p>A previsão aparece ao vivo com uma indicação discreta de confiança.</p></article></div></section>
-      <section className="light-section coverage-section" id="cobertura"><div className="coverage-copy"><span className="section-label">COBERTURA ATUAL</span><h2>21 letras reconhecidas.</h2><p>O modelo atual é focado em sinais estáticos — aqueles identificados em uma única posição da mão.</p><div className="coverage-note"><Hand size={22} /><div><strong>Por que algumas ficam de fora?</strong><span>H, J, K, X e Z dependem de movimento. Elas exigem um modelo temporal de vídeo.</span></div></div></div><div className="alphabet-card"><div className="alphabet-head"><span>Alfabeto disponível</span><strong>21/26</strong></div><div className="alphabet-grid">{"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter => <span key={letter} className={"HJKXZ".includes(letter) ? "pending" : "supported"}>{letter}</span>)}</div><div className="alphabet-legend"><span><i className="ok" /> Reconhecida</span><span><i /> Requer movimento</span></div></div></section>
-      <section className="tech-section"><div className="section-heading"><span>TECNOLOGIA</span><h2>Leve para usar.<br />Clara para entender.</h2></div><div className="tech-grid"><article><Cpu size={24} /><strong>Visão computacional</strong><p>MediaPipe localiza 21 pontos da mão em cada captura.</p></article><article><BrainCircuit size={24} /><strong>Modelo treinado</strong><p>Random Forest identifica padrões entre os sinais estáticos.</p></article><article><Zap size={24} /><strong>IA no dispositivo</strong><p>Todo o reconhecimento acontece no navegador, sem depender de servidor.</p></article><article><LockKeyhole size={24} /><strong>Privacidade primeiro</strong><p>Os quadros são processados no dispositivo e não ficam armazenados.</p></article></div></section>
-      <section className="final-cta"><img src="/brand/interlibras-mark.png" alt="" /><span>PRONTO PARA TESTAR?</span><h2>Faça um sinal.<br /><em>Descubra a letra.</em></h2><p>Funciona melhor com boa iluminação, uma mão por vez e fundo simples.</p><button className="hero-cta" onClick={() => void startCamera()}>Abrir reconhecimento <Camera size={19} /></button></section>
-      <footer className="site-footer"><div className="landing-brand"><img src="/brand/interlibras-mark.png" alt="" /><span>InterLibras</span></div><p>Reconhecimento de letras em Libras com visão computacional.</p><a href="#inicio">Voltar ao topo ↑</a></footer>
     </main>
   );
 
